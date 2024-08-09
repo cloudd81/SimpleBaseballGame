@@ -1,0 +1,38 @@
+.ScoreBoard {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Ball, .Strike {
+    display: flex;
+    align-items: center;
+}
+
+.boardTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #555;
+}
+
+.activeBoard, .inactiveBoard {
+    display: flex;
+}
+
+.activeBoard div, .inactiveBoard div {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.activeBoard div {
+    background-color: red;
+}
+
+.inactiveBoard div {
+    background-color: gray;
+}

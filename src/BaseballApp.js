@@ -22,8 +22,6 @@ function BaseballApp() {
     const [strike, setStrike] = useState(4);
     const [activeStrike, setActiveStrike] = useState(0);
     const [attempts, setAttempts] = useState(0);
-    const maxAttempts = 10;
-
 
     useEffect(() => {
         setAnswer(genAnswer());
@@ -31,7 +29,14 @@ function BaseballApp() {
 
     const handleChange = (e, index) => {
         const newInputs = [...inputs];
-        newInputs[index] = e.target.value;
+        let inputNumber = e.target.value.trim();
+
+        if(inputNumber !== "" && !Number.isNaN(inputNumber)) {
+            console.log('숫자가 아님 : ', inputNumber);
+            newInputs[index] = inputNumber;
+        } else {
+            newInputs[index] = "";
+        }
         setInputs(newInputs);
     };
 
